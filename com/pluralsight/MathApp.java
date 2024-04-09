@@ -81,7 +81,7 @@ public class MathApp {
         Random random = new Random();
 
         // Set a random number, between 0 and 1.
-        int randomNumber = random.nextInt();
+        double randomNumber = random.nextDouble();
 
         // Print out the random number.
         System.out.println("A random number between 0 and 1: " + randomNumber);
