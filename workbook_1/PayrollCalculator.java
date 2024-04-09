@@ -18,10 +18,29 @@ public class PayrollCalculator {
         System.out.println("Please input your pay rate.");
         double payRate = scanner.nextDouble();
 
-        // Calculate the gross pay.
-        double grossPay = hoursWorked * payRate;
+        // Ask user if they worked overtime.
+        System.out.println("Did you work overtime this week? (y/n)");
+        char overtime = scanner.next().charAt(0);
 
-        // Print out the information.
-        System.out.println(name + "'s" + " Gross Pay: $" + grossPay);
+        if (overtime == 'y') {
+            // Ask user how many hours did they work overtime.
+            System.out.println("How many hours did you work overtime?");
+            int overtimeHours = scanner.nextInt();
+
+            // Calculate the overtime payrate.
+            double overtimePayRate = payRate * 1.5;
+
+            // Calculate the total gross pay with the overtime pay + regular pay.
+            double grossPay = (overtimeHours + overtimePayRate) + (hoursWorked * payRate);
+
+            // Print out the information if user worked overtime.
+            System.out.println(name + "'s" + " Gross Pay: $" + grossPay);
+        } else if (overtime == 'n') {
+            // Calculate the gross pay.
+            double grossPay = hoursWorked * payRate;
+
+            // Print out the information if user didn't work overtime.
+            System.out.println(name + "'s" + " Gross Pay: $" + grossPay);
+        }
     }
 }
