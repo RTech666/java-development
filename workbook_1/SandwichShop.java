@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.text.DecimalFormat;
 
 public class SandwichShop {
-    // Set doubel to print with only 2 decimal places.
+    // Set double to print with only 2 decimal places.
     private static final DecimalFormat df = new DecimalFormat("0.00");
 
     public static void main(String[] args) {
@@ -22,37 +22,114 @@ public class SandwichShop {
         System.out.println("2: Large");
         int sandwichSize = scanner.nextInt();
 
+        // Ask the user if they want the sandwich "loaded".
+        System.out.println("Would you like a loaded sandwich? (y/n)");
+        char loaded = scanner.next().charAt(0);
+
         // Ask the user how old they are.
         System.out.print("How old are you? ");
         int age = scanner.nextInt();
 
+        // If user chose a regular sandwich.
         if (sandwichSize == 1) {
-            if (age <= 17) {
-                discount = regularSandwich * .10;
+            // If user wants it loaded.
+            if (loaded == 'y' || loaded == 'Y') {
+                // If user's age is 17 or younger.
+                if (age <= 17) {
+                    // Calculate the discount.
+                    discount = regularSandwich * .10;
+                    
+                    // Calculate the total with the discount.
+                    total = regularSandwich + 1 - discount;
+                    
+                    // Print out the total with the discount.
+                    System.out.println("The total is: $" + df.format(total));
 
-                total = regularSandwich - discount;
+                // If user's age is 65 or older.
+                } else if (age >= 65) {
+                    // Calculate the discount.
+                    discount = regularSandwich * .20;
+                    
+                    // Calculate the total with the discount.
+                    total = regularSandwich + 1 - discount;
+                    
+                    // Print out the total with the discount.
+                    System.out.println("The total is: $" + df.format(total));
+                }
+            // If user doesn't want it loaded.
+            } else if (loaded == 'n' || loaded == 'N') {
+                // If user's age is 17 or younger.
+                if (age <= 17) {
+                    // Calculate the discount.
+                    discount = regularSandwich * .10;
+                    
+                    // Calculate the total with the discount.
+                    total = regularSandwich - discount;
+                    
+                    // Print out the total with the discount.
+                    System.out.println("The total is: $" + df.format(total));
 
-                System.out.println("The total is: $" + df.format(total));
-            } else if (age >= 65) {
-                discount = regularSandwich * .20;
-
-                total = regularSandwich - discount;
-
-                System.out.println("The total is: $" + df.format(total));
-            }
+                // If user's age is 65 or older.
+                } else if (age >= 65) {
+                    // Calculate the discount.
+                    discount = regularSandwich * .20;
+                    
+                    // Calculate the total with the discount.
+                    total = regularSandwich - discount;
+                    
+                    // If user's age is 65 or older.
+                    System.out.println("The total is: $" + df.format(total));
+                }
+            }  
+        // If user wants a large sandwich.
         } else if (sandwichSize == 2) {
-            if (age <= 17) {
-                discount = largeSandwich * .10;
+            // If user wants it loaded.
+            if (loaded == 'y' || loaded == 'Y') {
+                // If user's age is 17 or younger.
+                if (age <= 17) {
+                    // Calculate the discount.
+                    discount = largeSandwich * .10;
+                    
+                    // Calculate the total with the discount.
+                    total = largeSandwich + 1.75 - discount;
+                    
+                    // Print out the total with the discount.
+                    System.out.println("The total is: $" + df.format(total));
 
-                total = largeSandwich - discount;
-
-                System.out.println("The total is: $" + df.format(total));
-            } else if (age >= 65) {
-                discount = largeSandwich * .20;
-
-                total = largeSandwich - discount;
-
-                System.out.println("The total is: $" + df.format(total));
+                // If user's age is 65 or older.
+                } else if (age >= 65) {
+                    // Calculate the discount.
+                    discount = largeSandwich * .20;
+                    
+                    // Calculate the total with the discount.
+                    total = largeSandwich + 1.75 - discount;
+                    
+                    // Print out the total with the discount.
+                    System.out.println("The total is: $" + df.format(total));
+                }
+            // If user doesn't want it loaded.
+            } else if (loaded == 'n' || loaded == 'N') {
+                // If user's age is 17 or younger.
+                if (age <= 17) {
+                    // Calculate the discount.
+                    discount = largeSandwich * .10;
+                    
+                    // Calculate the total with the discount.
+                    total = largeSandwich - discount;
+                    
+                    // Print out the total with the discount.
+                    System.out.println("The total is: $" + df.format(total));
+                // If user's age is 65 or older.
+                } else if (age >= 65) {
+                    // Calculate the discount.
+                    discount = largeSandwich * .20;
+                    
+                    // Calculate the total with the discount.
+                    total = largeSandwich - discount;
+                    
+                    // If user's age is 65 or older.
+                    System.out.println("The total is: $" + df.format(total));
+                }
             }
         }
     }
