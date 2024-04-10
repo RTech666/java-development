@@ -1,3 +1,5 @@
+package workbook_1;
+
 public class PracticeOperations {
     private String stringOne, stringTwo, stringThree;
     private double doubleOne, doubleTwo, doubleThree;
