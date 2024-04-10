@@ -30,7 +30,7 @@ public class PracticeOperations {
         double divideResult = (doubleOne / doubleTwo) / doubleThree;
         System.out.println("Divide Result: " + divideResult);
 
-        double totalResult = addResult + subtractResult + multiplyResult + divideResult;
+        double totalResult = addResult + subtractResult + multiplyResult + divideResult + 10 + 100 + 1000;
         System.out.println("Accumulation Result: " + totalResult);
     }
 
