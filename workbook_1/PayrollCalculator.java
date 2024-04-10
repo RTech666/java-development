@@ -19,10 +19,10 @@ public class PayrollCalculator {
         double payRate = scanner.nextDouble();
 
         // Ask user if they worked overtime.
-        System.out.println("Did you work overtime this week? (y/n)");
-        char overtime = scanner.next().charAt(0);
+        System.out.println("Did you work overtime this week? (Yes/No)");
+        String overtime = scanner.nextLine();
 
-        if (overtime == 'y' || overtime == 'Y') {
+        if (overtime.equalsIgnoreCase("yes")) {
             // Ask user how many hours did they work overtime.
             System.out.println("How many hours did you work overtime?");
             int overtimeHours = scanner.nextInt();
@@ -35,7 +35,7 @@ public class PayrollCalculator {
 
             // Print out the information if user worked overtime.
             System.out.println(name + "'s" + " Gross Pay: $" + grossPay);
-        } else if (overtime == 'n' || overtime == 'N') {
+        } else if (overtime.equalsIgnoreCase("no")) {
             // Calculate the gross pay.
             double grossPay = hoursWorked * payRate;
 

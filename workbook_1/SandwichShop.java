@@ -23,8 +23,8 @@ public class SandwichShop {
         int sandwichSize = scanner.nextInt();
 
         // Ask the user if they want the sandwich "loaded".
-        System.out.println("Would you like a loaded sandwich? (y/n)");
-        char loaded = scanner.next().charAt(0);
+        System.out.println("Would you like a loaded sandwich? (Yes/No)");
+        String loaded = scanner.nextLine();
 
         // Ask the user how old they are.
         System.out.print("How old are you? ");
@@ -33,7 +33,7 @@ public class SandwichShop {
         // If user chose a regular sandwich.
         if (sandwichSize == 1) {
             // If user wants it loaded.
-            if (loaded == 'y' || loaded == 'Y') {
+            if (loaded.equalsIgnoreCase("yes")) {
                 // If user's age is 17 or younger.
                 if (age <= 17) {
                     // Calculate the discount.
@@ -57,7 +57,7 @@ public class SandwichShop {
                     System.out.println("The total is: $" + df.format(total));
                 }
             // If user doesn't want it loaded.
-            } else if (loaded == 'n' || loaded == 'N') {
+            } else if (loaded.equalsIgnoreCase("no")) {
                 // If user's age is 17 or younger.
                 if (age <= 17) {
                     // Calculate the discount.
@@ -84,7 +84,7 @@ public class SandwichShop {
         // If user wants a large sandwich.
         } else if (sandwichSize == 2) {
             // If user wants it loaded.
-            if (loaded == 'y' || loaded == 'Y') {
+            if (loaded.equalsIgnoreCase("yes")) {
                 // If user's age is 17 or younger.
                 if (age <= 17) {
                     // Calculate the discount.
@@ -108,7 +108,7 @@ public class SandwichShop {
                     System.out.println("The total is: $" + df.format(total));
                 }
             // If user doesn't want it loaded.
-            } else if (loaded == 'n' || loaded == 'N') {
+            } else if (loaded.equalsIgnoreCase("no")) {
                 // If user's age is 17 or younger.
                 if (age <= 17) {
                     // Calculate the discount.
