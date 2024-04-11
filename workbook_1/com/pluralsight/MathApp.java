@@ -1,4 +1,4 @@
-package com.pluralsight;
+package workbook_1.com.pluralsight;
 import java.util.Random;
 
 public class MathApp {
