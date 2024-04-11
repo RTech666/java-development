@@ -14,20 +14,20 @@ public class PayrollCalculator {
     public static void main(String[] args) {
         // Tell the user to input their name.
         System.out.println("Please input your name.");
-        String name = scanner.nextLine();
+        name = scanner.nextLine();
 
         // Tell the user to input their hours worked.
         System.out.println("Please input your hours worked.");
-        int hoursWorked = scanner.nextInt();
+        hoursWorked = scanner.nextInt();
 
         // Tell the user to input their pay rate.
         System.out.println("Please input your pay rate.");
-        double payRate = scanner.nextDouble();
+        payRate = scanner.nextDouble();
         scanner.nextLine();
 
         // Ask user if they worked overtime.
         System.out.println("Did you work overtime this week? (Yes/No)");
-        String overtime = scanner.nextLine();
+        overtime = scanner.nextLine();
 
         if (overtime.equalsIgnoreCase("yes")) {
             didOvertime();

@@ -3,19 +3,22 @@ import java.util.Scanner;
 import java.text.DecimalFormat;
 
 public class SandwichShop {
+    // Initalize the scanner.
+    static Scanner scanner = new Scanner(System.in);
+
     // Set double to print with only 2 decimal places.
     private static final DecimalFormat df = new DecimalFormat("0.00");
 
+    // Create the variables.
+    static double regularSandwich = 5.45;
+    static double largeSandwich = 8.95;
+    static double total;
+    static double discount;
+    static int sandwichSize;
+    static String loaded;
+    static int age;
+
     public static void main(String[] args) {
-        // Create the variables.
-        double regularSandwich = 5.45;
-        double largeSandwich = 8.95;
-        double total;
-        double discount;
-
-        // Initalize the scanner.
-        Scanner scanner = new Scanner(System.in);
-
         // Ask the user what size sandwich they want.
         System.out.println("What size sandwich would you like?");
         System.out.println("1: Regular");
@@ -36,25 +39,11 @@ public class SandwichShop {
             if (loaded.equalsIgnoreCase("yes")) {
                 // If user's age is 17 or younger.
                 if (age <= 17) {
-                    // Calculate the discount.
-                    discount = regularSandwich * .10;
-                    
-                    // Calculate the total with the discount.
-                    total = regularSandwich + 1 - discount;
-                    
-                    // Print out the total with the discount.
-                    System.out.println("The total is: $" + df.format(total));
+                    underageLoadedRegular();
 
                 // If user's age is 65 or older.
                 } else if (age >= 65) {
-                    // Calculate the discount.
-                    discount = regularSandwich * .20;
-                    
-                    // Calculate the total with the discount.
-                    total = regularSandwich + 1 - discount;
-                    
-                    // Print out the total with the discount.
-                    System.out.println("The total is: $" + df.format(total));
+                    seniorLoadedRegular();
                 }
             // If user doesn't want it loaded.
             } else if (loaded.equalsIgnoreCase("no")) {
@@ -132,5 +121,51 @@ public class SandwichShop {
                 }
             }
         }
+    }
+
+    public static void underageLoadedRegular() {
+        // Calculate the discount.
+        discount = regularSandwich * .10;
+                    
+        // Calculate the total with the discount.
+        total = regularSandwich + 1 - discount;
+        
+        // Print out the total with the discount.
+        System.out.println("The total is: $" + df.format(total));
+    }
+
+    public static void underageRegular() {
+
+    }
+
+    public static void underageLoadedLarge() {
+
+    }
+
+    public static void underageLarge() {
+
+    }
+
+    public static void seniorLoadedRegular() {
+        // Calculate the discount.
+        discount = regularSandwich * .20;
+                    
+        // Calculate the total with the discount.
+        total = regularSandwich + 1 - discount;
+        
+        // Print out the total with the discount.
+        System.out.println("The total is: $" + df.format(total));
+    }
+
+    public static void seniorRegular() {
+
+    }
+
+    public static void seniorLoadedLarge() {
+
+    }
+
+    public static void seniorLarge() {
+
     }
 }
