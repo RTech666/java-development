@@ -24,63 +24,50 @@ public class SandwichShop {
         System.out.println("1: Regular");
         System.out.println("2: Large");
         sandwichSize = scanner.nextInt();
+        scanner.nextLine();
 
         // Ask the user if they want the sandwich "loaded".
-        System.out.println("Would you like a loaded sandwich? (Yes/No)");
+        System.out.print("Would you like a loaded sandwich? (Yes/No) ");
         loaded = scanner.nextLine();
 
         // Ask the user how old they are.
         System.out.print("How old are you? ");
         age = scanner.nextInt();
 
-        // If user chose a regular sandwich.
-        if (sandwichSize == 1) {
-            // If user wants it loaded.
-            if (loaded.equalsIgnoreCase("yes")) {
-                // If user's age is 17 or younger.
-                if (age <= 17) {
-                    underageLoadedRegular();
+        // If user chose a regular sandwich, is under 17, and wants it loaded.
+        if (sandwichSize == 1 && age <= 17 && loaded.equalsIgnoreCase("yes")) {
+            underageLoadedRegular();
+        // If user chose a regular sandwich, is over 65, and wants it loaded.
+        } else if (sandwichSize == 1 && age >= 65 && loaded.equalsIgnoreCase("yes")) {
+            seniorLoadedRegular();
+        }
 
-                // If user's age is 65 or older.
-                } else if (age >= 65) {
-                    seniorLoadedRegular();
-                }
-            // If user doesn't want it loaded.
-            } else if (loaded.equalsIgnoreCase("no")) {
-                // If user's age is 17 or younger.
-                if (age <= 17) {
-                    underageRegular();
+        // If user chose a regular sandwich, is under 17, and doesn't want it loaded.
+        if (sandwichSize == 1 && age <= 17 && loaded.equalsIgnoreCase("no")) {
+            underageRegular();
+        // If user chose a regular sandwich, is over 65, and doesn't want it loaded.
+        } else if (sandwichSize == 1 && age >= 65 && loaded.equalsIgnoreCase("no")) {
+            seniorRegular();
+        }
 
-                // If user's age is 65 or older.
-                } else if (age >= 65) {
-                    seniorRegular();
-                }
-            }  
-        // If user wants a large sandwich.
-        } else if (sandwichSize == 2) {
-            // If user wants it loaded.
-            if (loaded.equalsIgnoreCase("yes")) {
-                // If user's age is 17 or younger.
-                if (age <= 17) {
-                    underageLoadedLarge();
+        // If user chose a large sandwich, is under 17, and wants it loaded.
+        if (sandwichSize == 2 && age <= 17 && loaded.equalsIgnoreCase("yes")) {
+            underageLoadedLarge();
+        // If user chose a large sandwich, is over 65, and wants it loaded.
+        } else if (sandwichSize == 2 && age >= 65 && loaded.equalsIgnoreCase("yes")) {
+            seniorLoadedLarge();
+        }
 
-                // If user's age is 65 or older.
-                } else if (age >= 65) {
-                    seniorLoadedLarge();
-                }
-            // If user doesn't want it loaded.
-            } else if (loaded.equalsIgnoreCase("no")) {
-                // If user's age is 17 or younger.
-                if (age <= 17) {
-                    underageLarge();
-                // If user's age is 65 or older.
-                } else if (age >= 65) {
-                    seniorLarge();
-                }
-            }
+        // If user chose a large sandwich, is under 17, and doesn't want it loaded.
+        if (sandwichSize == 2 && age <= 17 && loaded.equalsIgnoreCase("no")) {
+            underageLarge();
+        // If user chose a large sandwich, is over 65, and doesn't want it loaded.
+        } else if (sandwichSize == 2 && age >= 65 && loaded.equalsIgnoreCase("no")) {
+            seniorLarge();
         }
     }
 
+    // Regular sandwich, is under 17, and loaded.
     public static void underageLoadedRegular() {
         // Calculate the discount.
         discount = regularSandwich * .10;
@@ -92,6 +79,7 @@ public class SandwichShop {
         System.out.println("The total is: $" + df.format(total));
     }
 
+    // Regular sandwich, is under 17, and isn't loaded.
     public static void underageRegular() {
         // Calculate the discount.
         discount = regularSandwich * .10;
@@ -103,6 +91,7 @@ public class SandwichShop {
         System.out.println("The total is: $" + df.format(total));
     }
 
+    // Large sandwich, is under 17, and loaded.
     public static void underageLoadedLarge() {
         // Calculate the discount.
         discount = largeSandwich * .10;
@@ -114,6 +103,7 @@ public class SandwichShop {
         System.out.println("The total is: $" + df.format(total));
     }
 
+    // Large sandwich, is under 17, and isn't loaded.
     public static void underageLarge() {
         // Calculate the discount.
         discount = largeSandwich * .10;
@@ -124,7 +114,8 @@ public class SandwichShop {
         // Print out the total with the discount.
         System.out.println("The total is: $" + df.format(total));
     }
-
+    
+    // Regular sandwich, is over 65, and loaded.
     public static void seniorLoadedRegular() {
         // Calculate the discount.
         discount = regularSandwich * .20;
@@ -136,6 +127,7 @@ public class SandwichShop {
         System.out.println("The total is: $" + df.format(total));
     }
 
+    // Regular sandwich, is over 65, and isn't loaded.
     public static void seniorRegular() {
         // Calculate the discount.
         discount = regularSandwich * .20;
@@ -147,6 +139,7 @@ public class SandwichShop {
         System.out.println("The total is: $" + df.format(total));
     }
 
+    // Large sandwich, is over 65, and loaded.
     public static void seniorLoadedLarge() {
         // Calculate the discount.
         discount = largeSandwich * .20;
@@ -158,6 +151,7 @@ public class SandwichShop {
         System.out.println("The total is: $" + df.format(total));
     }
 
+    // Large sandwich, is over 65, and isn't loaded.
     public static void seniorLarge() {
         // Calculate the discount.
         discount = largeSandwich * .20;
