@@ -3,6 +3,16 @@ import java.util.Random;
 
 public class MathApp {
     public static void main(String[] args) {
+        questionOne();
+        questionTwo();
+        questionThree();
+        questionFour();
+        questionFive();
+        questionSix();
+        questionSeven();
+    }
+
+    public static void questionOne() {
         // Question 1
         // Create the variables.
         int bobSalary = 200000;
@@ -13,12 +23,16 @@ public class MathApp {
         
         // Print out the highest salary.
         System.out.println("The highest salary is " + highestSalary);
+    }
 
+    public static void questionTwo() {
         // Question 2
         // Create the variables and set a price.
         double carPrice = 19.99;
         double truckPrice = 29.99;
+    }
 
+    public static void questionThree() {
         // Question 3
         // Create the variables.
         // Set 7.25 as the radius.
@@ -29,7 +43,9 @@ public class MathApp {
 
         // Print out the answer.
         System.out.println("The area of a circle whose radius is 7.25 is: " + area);
+    }
 
+    public static void questionFour() {
         // Question 4
         // Create the variables.
         // Set 5 as the variable.
@@ -40,7 +56,9 @@ public class MathApp {
 
         // Print out the answer.
         System.out.println("The square root of a variable after it is set to 5.0 is: " + squareRoot);
+    }
 
+    public static void questionFive() {
         // Question 5
         // Create the variables.
         // Set the x,y of the Coordinates.
@@ -63,7 +81,9 @@ public class MathApp {
 
         // Print out the answer.
         System.out.println("The distance between the points (5,10) and (85,50) is: " + distance);
+    }
 
+    public static void questionSix() {
         // Question 6
         // Create the variables.
         // Set -3.8 as the variable.
@@ -74,7 +94,9 @@ public class MathApp {
 
         // Print out the answer.
         System.out.println("The absolute (positive) value of a variable after it is set to -3.8 is: " + absoluteValue);
+    }
 
+    public static void questionSeven() {
         // Question 7
         // Create the variables.
         // Create an instance of the Random class.

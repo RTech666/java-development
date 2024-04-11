@@ -23,15 +23,15 @@ public class SandwichShop {
         System.out.println("What size sandwich would you like?");
         System.out.println("1: Regular");
         System.out.println("2: Large");
-        int sandwichSize = scanner.nextInt();
+        sandwichSize = scanner.nextInt();
 
         // Ask the user if they want the sandwich "loaded".
         System.out.println("Would you like a loaded sandwich? (Yes/No)");
-        String loaded = scanner.nextLine();
+        loaded = scanner.nextLine();
 
         // Ask the user how old they are.
         System.out.print("How old are you? ");
-        int age = scanner.nextInt();
+        age = scanner.nextInt();
 
         // If user chose a regular sandwich.
         if (sandwichSize == 1) {
@@ -49,25 +49,11 @@ public class SandwichShop {
             } else if (loaded.equalsIgnoreCase("no")) {
                 // If user's age is 17 or younger.
                 if (age <= 17) {
-                    // Calculate the discount.
-                    discount = regularSandwich * .10;
-                    
-                    // Calculate the total with the discount.
-                    total = regularSandwich - discount;
-                    
-                    // Print out the total with the discount.
-                    System.out.println("The total is: $" + df.format(total));
+                    underageRegular();
 
                 // If user's age is 65 or older.
                 } else if (age >= 65) {
-                    // Calculate the discount.
-                    discount = regularSandwich * .20;
-                    
-                    // Calculate the total with the discount.
-                    total = regularSandwich - discount;
-                    
-                    // If user's age is 65 or older.
-                    System.out.println("The total is: $" + df.format(total));
+                    seniorRegular();
                 }
             }  
         // If user wants a large sandwich.
@@ -76,48 +62,20 @@ public class SandwichShop {
             if (loaded.equalsIgnoreCase("yes")) {
                 // If user's age is 17 or younger.
                 if (age <= 17) {
-                    // Calculate the discount.
-                    discount = largeSandwich * .10;
-                    
-                    // Calculate the total with the discount.
-                    total = largeSandwich + 1.75 - discount;
-                    
-                    // Print out the total with the discount.
-                    System.out.println("The total is: $" + df.format(total));
+                    underageLoadedLarge();
 
                 // If user's age is 65 or older.
                 } else if (age >= 65) {
-                    // Calculate the discount.
-                    discount = largeSandwich * .20;
-                    
-                    // Calculate the total with the discount.
-                    total = largeSandwich + 1.75 - discount;
-                    
-                    // Print out the total with the discount.
-                    System.out.println("The total is: $" + df.format(total));
+                    seniorLoadedLarge();
                 }
             // If user doesn't want it loaded.
             } else if (loaded.equalsIgnoreCase("no")) {
                 // If user's age is 17 or younger.
                 if (age <= 17) {
-                    // Calculate the discount.
-                    discount = largeSandwich * .10;
-                    
-                    // Calculate the total with the discount.
-                    total = largeSandwich - discount;
-                    
-                    // Print out the total with the discount.
-                    System.out.println("The total is: $" + df.format(total));
+                    underageLarge();
                 // If user's age is 65 or older.
                 } else if (age >= 65) {
-                    // Calculate the discount.
-                    discount = largeSandwich * .20;
-                    
-                    // Calculate the total with the discount.
-                    total = largeSandwich - discount;
-                    
-                    // If user's age is 65 or older.
-                    System.out.println("The total is: $" + df.format(total));
+                    seniorLarge();
                 }
             }
         }
@@ -135,15 +93,36 @@ public class SandwichShop {
     }
 
     public static void underageRegular() {
-
+        // Calculate the discount.
+        discount = regularSandwich * .10;
+                    
+        // Calculate the total with the discount.
+        total = regularSandwich - discount;
+        
+        // Print out the total with the discount.
+        System.out.println("The total is: $" + df.format(total));
     }
 
     public static void underageLoadedLarge() {
-
+        // Calculate the discount.
+        discount = largeSandwich * .10;
+                    
+        // Calculate the total with the discount.
+        total = largeSandwich + 1.75 - discount;
+        
+        // Print out the total with the discount.
+        System.out.println("The total is: $" + df.format(total));
     }
 
     public static void underageLarge() {
-
+        // Calculate the discount.
+        discount = largeSandwich * .10;
+                    
+        // Calculate the total with the discount.
+        total = largeSandwich - discount;
+        
+        // Print out the total with the discount.
+        System.out.println("The total is: $" + df.format(total));
     }
 
     public static void seniorLoadedRegular() {
@@ -158,14 +137,35 @@ public class SandwichShop {
     }
 
     public static void seniorRegular() {
-
+        // Calculate the discount.
+        discount = regularSandwich * .20;
+                    
+        // Calculate the total with the discount.
+        total = regularSandwich - discount;
+        
+        // If user's age is 65 or older.
+        System.out.println("The total is: $" + df.format(total));
     }
 
     public static void seniorLoadedLarge() {
-
+        // Calculate the discount.
+        discount = largeSandwich * .20;
+                    
+        // Calculate the total with the discount.
+        total = largeSandwich + 1.75 - discount;
+        
+        // Print out the total with the discount.
+        System.out.println("The total is: $" + df.format(total));
     }
 
     public static void seniorLarge() {
-
+        // Calculate the discount.
+        discount = largeSandwich * .20;
+                    
+        // Calculate the total with the discount.
+        total = largeSandwich - discount;
+        
+        // If user's age is 65 or older.
+        System.out.println("The total is: $" + df.format(total));
     }
 }
