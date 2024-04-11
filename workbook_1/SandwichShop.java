@@ -65,6 +65,9 @@ public class SandwichShop {
         } else if (sandwichSize == 2 && age >= 65 && loaded.equalsIgnoreCase("no")) {
             seniorLarge();
         }
+
+        // Print the total.
+        printTotal();
     }
 
     // Regular sandwich, is under 17, and loaded.
@@ -74,9 +77,6 @@ public class SandwichShop {
                     
         // Calculate the total with the discount.
         total = regularSandwich + 1 - discount;
-        
-        // Print out the total with the discount.
-        System.out.println("The total is: $" + df.format(total));
     }
 
     // Regular sandwich, is under 17, and isn't loaded.
@@ -86,9 +86,6 @@ public class SandwichShop {
                     
         // Calculate the total with the discount.
         total = regularSandwich - discount;
-        
-        // Print out the total with the discount.
-        System.out.println("The total is: $" + df.format(total));
     }
 
     // Large sandwich, is under 17, and loaded.
@@ -98,9 +95,6 @@ public class SandwichShop {
                     
         // Calculate the total with the discount.
         total = largeSandwich + 1.75 - discount;
-        
-        // Print out the total with the discount.
-        System.out.println("The total is: $" + df.format(total));
     }
 
     // Large sandwich, is under 17, and isn't loaded.
@@ -110,9 +104,6 @@ public class SandwichShop {
                     
         // Calculate the total with the discount.
         total = largeSandwich - discount;
-        
-        // Print out the total with the discount.
-        System.out.println("The total is: $" + df.format(total));
     }
     
     // Regular sandwich, is over 65, and loaded.
@@ -122,9 +113,6 @@ public class SandwichShop {
                     
         // Calculate the total with the discount.
         total = regularSandwich + 1 - discount;
-        
-        // Print out the total with the discount.
-        System.out.println("The total is: $" + df.format(total));
     }
 
     // Regular sandwich, is over 65, and isn't loaded.
@@ -134,9 +122,6 @@ public class SandwichShop {
                     
         // Calculate the total with the discount.
         total = regularSandwich - discount;
-        
-        // If user's age is 65 or older.
-        System.out.println("The total is: $" + df.format(total));
     }
 
     // Large sandwich, is over 65, and loaded.
@@ -146,9 +131,6 @@ public class SandwichShop {
                     
         // Calculate the total with the discount.
         total = largeSandwich + 1.75 - discount;
-        
-        // Print out the total with the discount.
-        System.out.println("The total is: $" + df.format(total));
     }
 
     // Large sandwich, is over 65, and isn't loaded.
@@ -158,8 +140,10 @@ public class SandwichShop {
                     
         // Calculate the total with the discount.
         total = largeSandwich - discount;
-        
-        // If user's age is 65 or older.
+    }
+
+    // What to print for total.
+    public static void printTotal() {
         System.out.println("The total is: $" + df.format(total));
     }
 }
