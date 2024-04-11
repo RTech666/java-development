@@ -5,7 +5,7 @@ public class FullNameApplication {
     // Initalize the scanner.
     static Scanner scanner = new Scanner(System.in);
 
-    // Initalize the variables.
+    // Create the variables.
     static String firstName;
     static String middleName;
     static String lastName;
