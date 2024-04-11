@@ -28,7 +28,7 @@ public class HighScoreWins {
 
     // Parse the game score.
     public static void parseGameScore() {
-        // Split the game score into two parts, teamPart and scorePart.
+        // Split the gameScore into two parts, teamPart and scorePart.
         String[] gameParts = gameScore.split("\\|");
         String teamPart = gameParts[0];
         String scorePart = gameParts[1];
