@@ -62,4 +62,9 @@ public class CellPhone {
     public void dial(String phoneNumber) {
         System.out.println(owner + "'s phone is calling " + phoneNumber);
     }
+
+    // Create the overloaded dial method.
+    public void dial(CellPhone phone) {
+        System.out.println(owner + "'s phone is calling " + phone.getPhoneNumber());
+    }
 }
