@@ -1,12 +1,14 @@
 package workbook_2.com.pluralsight;
 
 public class CellPhone {
+    // Create the variables, as private.
     private int serialNumber = 0;
     private String model = "";
     private String carrier = "";
     private String phoneNumber = "";
     private String owner = "";
 
+    // Create the constrcutor.
     public CellPhone(int serialNumber, String model, String carrier, String phoneNumber, String owner) {
         this.serialNumber = serialNumber;
         this.model = model;
@@ -15,6 +17,7 @@ public class CellPhone {
         this.owner = owner;
     }
 
+    // Create the setter and getters.
     public void setSerialNumber(int serialNumber) {
         this.serialNumber = serialNumber;
     }
@@ -55,6 +58,7 @@ public class CellPhone {
         return this.owner;
     }
 
+    // Create the dial method.
     public void dial(String phoneNumber) {
         System.out.println(owner + "'s phone is calling " + phoneNumber);
     }
