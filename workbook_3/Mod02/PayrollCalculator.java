@@ -1,4 +1,4 @@
-package workbook_3;
+package workbook_3.Mod02;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
