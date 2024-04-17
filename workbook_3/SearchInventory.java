@@ -45,7 +45,7 @@ class Product {
         this.price = price;
     }
 
-    // Create an override to properly read and print inventory.csv
+    // Create an override to properly read and print products.csv
     @Override
     public String toString() {
         return "ID: " + id + ", Name: " + name + ", Price: $" + price;
@@ -187,15 +187,15 @@ public class SearchInventory {
 
     // Create the getInventory method.
     public ArrayList<Product> getInventory() {
-        // Read data from inventory.csv file
-        csvFile = "inventory.csv";
+        // Read data from products.csv file
+        csvFile = "products.csv";
 
         // Create the variables.
         String line;
         String delimiter = "\\|";
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            // Split the items from inventory.csv.
+            // Split the items from products.csv.
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(delimiter);
                 if (parts.length == 3) {
