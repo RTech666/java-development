@@ -7,6 +7,7 @@ public class Employee {
     private String department;
     private double payRate;
     private double hoursWorked;
+    private double startTime;
 
     // Create the constrcutor.
     public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
@@ -14,7 +15,7 @@ public class Employee {
         this.name = name;
         this.department = department;
         this.payRate = payRate;
-        this.hoursWorked = hoursWorked;
+        this.hoursWorked = 0.0;
     }
 
     // Create the getters and setters.
@@ -70,5 +71,24 @@ public class Employee {
         // Hours exceeding 20 are overtime
         double overtimeHours = Math.max(hoursWorked - 20, 0);
         return (regularHours * payRate) + (overtimeHours * overtimeRate);
+    }
+
+    // Create punchTimeCard method.
+    public void punchTimeCard(double time) {
+        if (startTime == 0.0) {
+            // Set start time and print out message.
+            startTime = time;
+            System.out.println("Punched in at " + time + " o'clock.");
+        } else {
+            // Calculate how many hours they worked.
+            double hoursWorkedThisShift = time - startTime;
+            hoursWorked += hoursWorkedThisShift;
+
+            // Print message.
+            System.out.println("Punched out at " + time + " o'clock. Worked " + hoursWorkedThisShift + " hours this shift.");
+
+            // Reset time.
+            startTime = 0.0;
+        }
     }
 }
