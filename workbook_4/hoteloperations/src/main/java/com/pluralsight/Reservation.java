@@ -1,4 +1,4 @@
-package workbook_4.com.pluralsight;
+package com.pluralsight;
 
 public class Reservation {
     // Create the variables, as private.

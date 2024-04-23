@@ -1,4 +1,4 @@
-package workbook_4.com.pluralsight;
+package com.pluralsight;
 import java.time.LocalDateTime;
 
 public class Employee {
@@ -7,8 +7,8 @@ public class Employee {
     private String name;
     private String department;
     private double payRate;
-    private double hoursWorked;
-    private double startTime;
+    public double hoursWorked;
+    public double startTime;
 
     // Create the constrcutor.
     public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {

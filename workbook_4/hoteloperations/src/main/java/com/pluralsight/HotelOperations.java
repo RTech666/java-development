@@ -1,7 +1,4 @@
-package workbook_4;
-import workbook_4.com.pluralsight.Employee;
-import workbook_4.com.pluralsight.Reservation;
-import workbook_4.com.pluralsight.Room;
+package com.pluralsight;
 import java.text.DecimalFormat;
 
 public class HotelOperations {

@@ -31,3 +31,5 @@ replay_pid*
 /online_store
 /accounting_ledger
 transactions.csv
+.vscode/extensions.json
+.vscode/settings.json
