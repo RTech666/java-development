@@ -1,5 +1,7 @@
 package com.pluralsight;
 
 public class Car extends Vehicle {
-    // Additional properties and methods specific to Car can be added here
+    public Car(String color, int numberOfPassengers, int fuelCapacity) {
+        super(color, numberOfPassengers, 0, fuelCapacity); // Assuming Car has no cargo
+    }
 }

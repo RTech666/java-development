@@ -1,5 +1,7 @@
 package com.pluralsight;
 
 public class Hovercraft extends Vehicle {
-    // Additional properties and methods specific to Hovercraft can be added here
+    public Hovercraft(String color, int numberOfPassengers, int cargoCapacity, int fuelCapacity) {
+        super(color, numberOfPassengers, cargoCapacity, fuelCapacity);
+    }
 }
