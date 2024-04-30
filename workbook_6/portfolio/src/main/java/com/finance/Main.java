@@ -5,10 +5,14 @@ import com.pluralsight.Valuable;
 public class Main {
     public static void main(String[] args) {
         BankAccount account1 = new BankAccount(123, "Pam", 12500);
-        Valueable account2 = new BankAccount(456, "Gary", 1500);
+        Valuable account2 = new BankAccount(456, "Gary", 1500);
 
         // Try to deposit money into both accounts.
         account1.deposit(100);
-        account2.deposit(100);
+
+        // Fix account 2 deposit. Cast it to BankAccount first, then deposit.
+        if (account2 instanceof BankAccount) {
+            ((BankAccount) account2).deposit(100);
+        }
     }
 }
