@@ -3,11 +3,11 @@ package com.pluralsight;
 public class BankAccount implements Valuable {
     // Create the variables, as private.
     private String name;
-    private String accountNumber;
+    private int accountNumber;
     private double balance;
 
     // Create the constructor.
-    public BankAccount(String accountNumber, String name, double balance) {
+    public BankAccount(int accountNumber, String name, double balance) {
         this.accountNumber = accountNumber;
         this.name = name;
         this.balance = balance;
