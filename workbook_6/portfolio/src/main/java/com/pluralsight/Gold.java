@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-class Gold extends FixedAsset {
+public class Gold extends FixedAsset {
     // Create the variables, as private.
     private double weight;
 

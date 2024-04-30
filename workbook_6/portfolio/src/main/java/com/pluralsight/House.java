@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-class House extends FixedAsset {
+public class House extends FixedAsset {
     // Create the variables, as private.
     private int yearBuilt;
     private int squareFeet;

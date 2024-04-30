@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-class CreditCard implements Valuable {
+public class CreditCard implements Valuable {
     // Create the variables, as private.
     private String name;
     private String accountNumber;
