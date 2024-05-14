@@ -1,0 +1,24 @@
+[submodule "DELI-cious"]
+	path = DELI-cious
+	url = https://github.com/RTech666/DELI-cious
+[submodule "turtlepaint"]
+	path = turtlepaint
+	url = https://github.com/RTech666/turtlepaint
+[submodule "accounting_ledger"]
+	path = accounting_ledger
+	url = https://github.com/RTech666/accounting_ledger
+[submodule "adv_dealership_project"]
+	path = adv_dealership_project
+	url = https://github.com/RTech666/adv_dealership_project
+[submodule "car_dealership"]
+	path = car_dealership
+	url = https://github.com/RTech666/car_dealership
+[submodule "online_store"]
+	path = online_store
+	url = https://github.com/RTech666/online_store
+[submodule "neighborhood_library"]
+	path = neighborhood_library
+	url = https://github.com/RTech666/neighborhood_library
+[submodule "financial_calculators"]
+	path = financial_calculators
+	url = https://github.com/RTech666/financial_calculators

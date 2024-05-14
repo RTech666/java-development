@@ -26,16 +26,8 @@ replay_pid*
 # IntelliJ IDEA #
 **/.idea/
 /.vs
-/financial_calculators
-/neighborhood_library
-/online_store
-/accounting_ledger
 transactions.csv
 .vscode/extensions.json
 .vscode/settings.json
 workbook_4/staticclasses/pom.xml
 workbook_4/blackjack/pom.xml
-/car_dealership
-/adv_dealership_project
-/turtlepaint
-/DELI-cious
