@@ -8,7 +8,7 @@ import java.sql.Statement;
 public class Main {
     public static void main(String[] args) {
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/northwind", "admin", "TC2%T@ajrGUhcB");
-             Statement statement = connection.createStatement()) {
+            Statement statement = connection.createStatement()) {
 
             // Define query to select all products.
             String selectQuery = "SELECT * FROM products";
