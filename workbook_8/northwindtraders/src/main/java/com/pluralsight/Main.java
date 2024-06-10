@@ -72,7 +72,7 @@ public class Main {
     //     }
     // }
 
-    // Exercise 3
+    // Exercise 3 and 4
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
             while (true) {
@@ -80,6 +80,7 @@ public class Main {
                 System.out.println("What do you want to do?");
                 System.out.println("1) Display all products");
                 System.out.println("2) Display all customers");
+                System.out.println("3) Display all categories");
                 System.out.println("0) Exit");
                 System.out.print("Select an option: ");
                 int choice = scanner.nextInt();
@@ -92,6 +93,9 @@ public class Main {
                         break;
                     case 2:
                         displayAllCustomers();
+                        break;
+                    case 3:
+                        displayAllCategories(scanner);
                         break;
                     case 0:
                         System.out.println("Exiting...");
@@ -154,6 +158,49 @@ public class Main {
                     System.out.println("City: " + city);
                     System.out.println("Country: " + country);
                     System.out.println("Phone: " + phone);
+                    System.out.println("------------------");
+                }
+            }
+        }
+    }
+
+    private static void displayAllCategories(Scanner scanner) throws SQLException {
+        // Connect to database.
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/northwind", "root", "TC2%T@ajrGUhcB");
+            Statement statement = connection.createStatement()) {
+            
+            // Define query to display all categories.
+            String queryCategoryDetails = "SELECT CategoryID, CategoryName FROM categories ORDER BY CategoryID";
+            
+            // Execute query.
+            try (ResultSet categoryDetails = statement.executeQuery(queryCategoryDetails)) {
+                while (categoryDetails.next()) {
+                    int categoryId = categoryDetails.getInt("CategoryID");
+                    String categoryName = categoryDetails.getString("CategoryName");
+
+                    System.out.println("Category ID: " + categoryId + ", Category Name: " + categoryName);
+                }
+            }
+
+            // Asks user for the CategoryID.
+            System.out.print("Enter the CategoryID to display its products: ");
+            int categoryId = scanner.nextInt();
+
+            // Define query to display all products of the entered CategoryID.
+            String queryProductsByCategory = "SELECT ProductID, ProductName, UnitPrice, UnitsInStock FROM products WHERE CategoryID = " + categoryId;
+
+            // Execute query.
+            try (ResultSet productsByCategory = statement.executeQuery(queryProductsByCategory)) {
+                while (productsByCategory.next()) {
+                    int productId = productsByCategory.getInt("ProductID");
+                    String productName = productsByCategory.getString("ProductName");
+                    double unitPrice = productsByCategory.getDouble("UnitPrice");
+                    int unitsInStock = productsByCategory.getInt("UnitsInStock");
+
+                    System.out.println("ID: " + productId);
+                    System.out.println("Name: " + productName);
+                    System.out.println(String.format("Price: %.2f", unitPrice));
+                    System.out.println("Stock: " + unitsInStock);
                     System.out.println("------------------");
                 }
             }
