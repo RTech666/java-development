@@ -10,6 +10,7 @@ public class DataManager {
         connection = DriverManager.getConnection(dbUrl, user, password);
     }
 
+    // Create insertShipper method.
     public int insertShipper(String name, String phone) throws SQLException {
         String sql = "INSERT INTO shippers (CompanyName, Phone) VALUES (?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -26,6 +27,7 @@ public class DataManager {
         }
     }
 
+    // Create getAllShippers method.
     public List<Shipper> getAllShippers() throws SQLException {
         List<Shipper> shippers = new ArrayList<>();
         String sql = "SELECT * FROM shippers";
@@ -38,6 +40,7 @@ public class DataManager {
         return shippers;
     }
 
+    // Create updateShipperPhone method.
     public void updateShipperPhone(int id, String phone) throws SQLException {
         String sql = "UPDATE shippers SET Phone = ? WHERE ShipperID = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -47,6 +50,7 @@ public class DataManager {
         }
     }
 
+    // Create deleteShipper method.
     public void deleteShipper(int id) throws SQLException {
         String sql = "DELETE FROM shippers WHERE ShipperID = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -55,6 +59,7 @@ public class DataManager {
         }
     }
 
+    // Close connection.
     public void close() throws SQLException {
         if (connection != null && !connection.isClosed()) {
             connection.close();

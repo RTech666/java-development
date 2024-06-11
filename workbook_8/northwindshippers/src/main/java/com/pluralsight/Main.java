@@ -9,6 +9,7 @@ public class Main {
         DataManager dataManager = null;
 
         try {
+            // Create database connection.
             dataManager = new DataManager("jdbc:mysql://localhost:3306/northwind", "root", "TC2%T@ajrGUhcB");
 
             // Step 1: Prompt user for new shipper data
@@ -26,7 +27,7 @@ public class Main {
             // Step 3: Prompt user to change the phone number of a shipper
             System.out.print("Enter the ID of the shipper to update: ");
             int idToUpdate = scanner.nextInt();
-            scanner.nextLine(); // consume newline
+            scanner.nextLine();
             System.out.print("Enter new phone number: ");
             String newPhone = scanner.nextLine();
 
@@ -62,6 +63,7 @@ public class Main {
         }
     }
 
+    // Create displayAllShippers method.
     private static void displayAllShippers(DataManager dataManager) throws SQLException {
         List<Shipper> shippers = dataManager.getAllShippers();
         for (Shipper shipper : shippers) {
