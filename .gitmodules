@@ -22,3 +22,9 @@
 [submodule "financial_calculators"]
 	path = financial_calculators
 	url = https://github.com/RTech666/financial_calculators
+[submodule "CarDealershipDatabase"]
+	path = CarDealershipDatabase
+	url = https://github.com/RTech666/CarDealershipDatabase
+[submodule "CarDealershipSQL"]
+	path = CarDealershipSQL
+	url = https://github.com/RTech666/CarDealershipSQL
