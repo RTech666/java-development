@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SpringBootHelloworldApplication",
+            "request": "launch",
+            "mainClass": "com.pluralsight.NorthwindTradersAPI.SpringBootHelloworldApplication",
+            "projectName": "NorthwindTradersAPI"
+        },
+        {
+            "type": "java",
+            "name": "SpringBootHelloworldApplication",
+            "request": "launch",
+            "mainClass": "SpringBootHelloworldApplication",
+            "projectName": "java-development_523b0cf8"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-NorthwindTradersSpringBootApplication<NorthwindTradersSpringBoot>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
