@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-NorthwindTradersSpringBootApplication<NorthwindTradersSpringBoot>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.pluralsight.NorthwindTradersSpringBoot.NorthwindTradersSpringBootApplication",
+            "projectName": "NorthwindTradersSpringBoot",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
