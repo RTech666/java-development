@@ -43,6 +43,12 @@ public class JdbcCategoryDao implements CategoryDao {
         jdbcTemplate.update(sql, category.getCategoryName(), id);
     }
 
+    @Override
+    public void delete(int id) {
+        String sql = "DELETE FROM categories WHERE CategoryID = ?";
+        jdbcTemplate.update(sql, id);
+    }
+
     private static final class CategoryRowMapper implements RowMapper<Category> {
         @Override
         public Category mapRow(ResultSet rs, int rowNum) throws SQLException {

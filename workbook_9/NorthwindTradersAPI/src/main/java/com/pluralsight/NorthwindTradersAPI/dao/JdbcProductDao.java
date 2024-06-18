@@ -43,6 +43,12 @@ public class JdbcProductDao implements ProductDao {
         jdbcTemplate.update(sql, product.getProductName(), product.getCategoryId(), product.getUnitPrice(), id);
     }
 
+    @Override
+    public void delete(int id) {
+        String sql = "DELETE FROM products WHERE ProductID = ?";
+        jdbcTemplate.update(sql, id);
+    }
+
 
     private static final class ProductRowMapper implements RowMapper<Product> {
         @Override
