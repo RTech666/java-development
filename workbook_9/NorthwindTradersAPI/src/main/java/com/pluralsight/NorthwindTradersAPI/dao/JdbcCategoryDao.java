@@ -26,8 +26,15 @@ public class JdbcCategoryDao implements CategoryDao {
 
     @Override
     public Category getById(int id) {
-        String sql = "SELECT * FROM categories WHERE category_id = ?";
+        String sql = "SELECT * FROM categories WHERE CategoryID = ?";
         return jdbcTemplate.queryForObject(sql, new CategoryRowMapper(), id);
+    }
+
+    @Override
+    public Category insert(Category category) {
+        String sql = "INSERT INTO categories (CategoryName) VALUES (?)";
+        jdbcTemplate.update(sql, category.getCategoryName());
+        return category;
     }
 
     private static final class CategoryRowMapper implements RowMapper<Category> {

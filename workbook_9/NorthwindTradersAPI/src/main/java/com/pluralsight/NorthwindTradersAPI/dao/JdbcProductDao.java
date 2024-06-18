@@ -30,6 +30,13 @@ public class JdbcProductDao implements ProductDao {
         return jdbcTemplate.queryForObject(sql, new ProductRowMapper(), id);
     }
 
+    @Override
+    public Product insert(Product product) {
+        String sql = "INSERT INTO products (ProductName, ProductID, UnitPrice) VALUES (?, ?, ?)";
+        jdbcTemplate.update(sql, product.getProductName(), product.getCategoryId(), product.getUnitPrice());
+        return product;
+    }
+
     private static final class ProductRowMapper implements RowMapper<Product> {
         @Override
         public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
