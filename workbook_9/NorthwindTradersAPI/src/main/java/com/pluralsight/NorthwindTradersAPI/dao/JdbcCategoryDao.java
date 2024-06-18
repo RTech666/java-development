@@ -37,6 +37,12 @@ public class JdbcCategoryDao implements CategoryDao {
         return category;
     }
 
+    @Override
+    public void update(int id, Category category) {
+        String sql = "UPDATE categories SET CategoryName = ? WHERE CategoryID = ?";
+        jdbcTemplate.update(sql, category.getCategoryName(), id);
+    }
+
     private static final class CategoryRowMapper implements RowMapper<Category> {
         @Override
         public Category mapRow(ResultSet rs, int rowNum) throws SQLException {

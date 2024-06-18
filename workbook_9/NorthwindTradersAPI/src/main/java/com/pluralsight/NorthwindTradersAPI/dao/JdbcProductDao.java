@@ -32,10 +32,17 @@ public class JdbcProductDao implements ProductDao {
 
     @Override
     public Product insert(Product product) {
-        String sql = "INSERT INTO products (ProductName, ProductID, UnitPrice) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO products (ProductName, CategoryID, UnitPrice) VALUES (?, ?, ?)";
         jdbcTemplate.update(sql, product.getProductName(), product.getCategoryId(), product.getUnitPrice());
         return product;
     }
+
+    @Override
+    public void update(int id, Product product) {
+        String sql = "UPDATE products SET ProductName = ?, CategoryID = ?, UnitPrice = ? WHERE ProductID = ?";
+        jdbcTemplate.update(sql, product.getProductName(), product.getCategoryId(), product.getUnitPrice(), id);
+    }
+
 
     private static final class ProductRowMapper implements RowMapper<Product> {
         @Override
