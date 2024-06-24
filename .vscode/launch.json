@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DealershipApiApplication",
+            "request": "launch",
+            "mainClass": "com.pluralsight.dealership.DealershipApiApplication",
+            "projectName": "dealership-api"
+        },
+        {
+            "type": "java",
             "name": "SpringBootHelloworldApplication",
             "request": "launch",
             "mainClass": "com.pluralsight.NorthwindTradersAPI.SpringBootHelloworldApplication",
