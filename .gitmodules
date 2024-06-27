@@ -31,3 +31,6 @@
 [submodule "CarDealershipAPI"]
 	path = CarDealershipAPI
 	url = https://github.com/RTech666/CarDealershipAPI
+[submodule "E-CommerceAPI"]
+	path = E-CommerceAPI
+	url = https://github.com/RTech666/E-CommerceAPI

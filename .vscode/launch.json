@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "EasyshopApplication",
+            "request": "launch",
+            "mainClass": "org.yearup.EasyshopApplication",
+            "projectName": "easyshop-capstone-starter"
+        },
+        {
+            "type": "java",
             "name": "DealershipApiApplication",
             "request": "launch",
             "mainClass": "com.pluralsight.dealership.DealershipApiApplication",
